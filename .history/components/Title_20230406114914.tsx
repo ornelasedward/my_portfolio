@@ -1,0 +1,34 @@
+interface About {
+  hero: string;
+  description1: string;
+  description2: string;
+  description3: string;
+}
+
+export default function Title() {
+  const [about, setAbout] = useState<About | null>(null);
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "about"][0]{
+            hero,
+            description1,
+            description2,
+            description3
+          }`
+      )
+      .then((data) => setAbout(data))
+      .catch(console.error);
+  }, []);
+
+  if (!about) {
+    return null;
+  }
+
+  return (
+    <div>
+      <h1 className="md:text-9xl text-7xl font-light">Hello I&apos;m Luis</h1>
+    </div>
+  );
+}

@@ -1,0 +1,32 @@
+"use client";
+import { useState, useEffect } from "react";
+import { client } from "../lib/sanity.client";
+
+interface Title {
+  title: string;
+}
+
+export default function Title() {
+  const [title, setTitle] = useState<Title | null>(null);
+
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "title"][0]{
+            title,
+          }`
+      )
+      .then((data) => setTitle(data))
+      .catch(console.error);
+  }, []);
+
+  if (!title) {
+    return null;
+  }
+
+  return (
+    <div>
+      <h1 className="md:text-9xl text-7xl font-light">{title}</h1>
+    </div>
+  );
+}

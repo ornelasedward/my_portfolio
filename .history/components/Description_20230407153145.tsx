@@ -11,7 +11,7 @@ export default function Description() {
 
   useEffect(() => {
     client
-      .fetch<Description>(
+      .fetch<Title>(
         `*[_type == "description"][0]{
             description
           }`

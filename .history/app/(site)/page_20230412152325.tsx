@@ -1,6 +1,5 @@
 import Description from "@/components/Description";
 import Footer from "@/components/Footer";
-import Logo from "@/components/Logo";
 import Title from "@/components/Title";
 import Title2 from "@/components/Title2";
 import { getProjects } from "@/sanity/sanity-utils";
@@ -11,12 +10,11 @@ export default async function Home() {
   const projects = await getProjects();
 
   return (
-    <div className="flex">
-      <div>
-        <Logo />
-      </div>
+    <div className="">
       <div>
         <Title />
+      </div>
+      <div>
         <Description />
         <Title2 />
 

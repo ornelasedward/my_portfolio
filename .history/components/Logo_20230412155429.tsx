@@ -53,7 +53,7 @@ export default function Logo() {
     <div className="flex flex-col items-center">
       {logo.logo && (
         <Link href="/" className="flex items-center gap-2">
-          <div className="h-12 w-12 items-center mb-4">
+          <div className="h-12 w-12 mb-4">
             <Image
               src={urlFor(logo.logo.asset).url()}
               alt={logo.title}
@@ -62,27 +62,22 @@ export default function Logo() {
             />
           </div>
           {logo.title && (
-            <div className="text-center">
-              <div className="md:text-6xl text-2xl md:font-light transform rotate-90 inline-block">
-                {logo.title.split("").map((char, index) => (
-                  <span key={index} className="inline-block">
-                    {char}
-                  </span>
-                ))}
-              </div>
+            <div className="md:text-6xl text-2xl md:font-light items-center">
+              {logo.title.split("").map((char, index) => (
+                <div key={index} className="uppercase">
+                  {char}
+                </div>
+              ))}
             </div>
           )}
         </Link>
       )}
       {!logo.logo && logo.title && (
-        <div
-          className="md:text-6xl text-2xl md:font-light text-center transform rotate-180
-         inline-block"
-        >
+        <div className="md:text-6xl text-2xl md:font-light items-center">
           {logo.title.split("").map((char, index) => (
-            <span key={index} className="inline-block">
+            <div key={index} className="uppercase">
               {char}
-            </span>
+            </div>
           ))}
         </div>
       )}

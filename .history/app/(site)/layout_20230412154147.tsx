@@ -20,7 +20,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className="md:py-10 py-4 px-4 max-w-[1400px] mx-auto">
         <header className="flex items-center justify-center">
-          <div className="flex items-center md:gap-5 gap-2 md:text-4xl text-gray-900">
+          <div className="grid grid-cols-1 items-center md:gap-5 gap-2 md:text-4xl text-gray-900">
             {pages.map((page) => (
               <Link
                 key={page._id}

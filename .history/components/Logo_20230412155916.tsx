@@ -75,10 +75,7 @@ export default function Logo() {
         </Link>
       )}
       {!logo.logo && logo.title && (
-        <div
-          className="md:text-6xl text-2xl md:font-light text-center transform rotate-180
-         inline-block"
-        >
+        <div className="md:text-6xl text-2xl md:font-light text-center transform rotate-90 inline-block">
           {logo.title.split("").map((char, index) => (
             <span key={index} className="inline-block">
               {char}

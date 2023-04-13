@@ -76,7 +76,7 @@ export default function Logo() {
       )}
       {!logo.logo && logo.title && (
         <div
-          className="md:text-6xl text-2xl md:font-light text-center transform rotate-180
+          className="md:text-6xl text-2xl md:font-light text-center transform rotate-45
          inline-block"
         >
           {logo.title.split("").map((char, index) => (

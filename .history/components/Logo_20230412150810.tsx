@@ -50,7 +50,7 @@ export default function Logo() {
   }
 
   return (
-    <div className="flex flex-col items-center">
+    <div>
       {logo.logo && (
         <Link href="/" className="flex items-center gap-2">
           <div className="h-12 w-12 items-center mb-4">
@@ -62,28 +62,15 @@ export default function Logo() {
             />
           </div>
           {logo.title && (
-            <div className="text-center">
-              <div className="md:text-6xl text-2xl md:font-light transform rotate-90 inline-block">
-                {logo.title.split("").map((char, index) => (
-                  <span key={index} className="inline-block">
-                    {char}
-                  </span>
-                ))}
-              </div>
+            <div className="md:text-6xl text-2xl md:font-light items-center">
+              {logo.title}
             </div>
           )}
         </Link>
       )}
       {!logo.logo && logo.title && (
-        <div
-          className="md:text-6xl text-2xl md:font-light text-center transform rotate-180
-         inline-block"
-        >
-          {logo.title.split("").map((char, index) => (
-            <span key={index} className="inline-block">
-              {char}
-            </span>
-          ))}
+        <div className="md:text-6xl text-2xl md:font-light items-center">
+          {logo.title}
         </div>
       )}
     </div>

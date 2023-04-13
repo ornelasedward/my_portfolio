@@ -11,7 +11,7 @@ export default async function Home() {
   const projects = await getProjects();
 
   return (
-    <div className="flex">
+    <div className="">
       <div>
         <Logo />
       </div>
